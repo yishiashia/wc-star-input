@@ -1,12 +1,12 @@
 {
   "name": "wc-star-input",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Star rating input WebComponent ",
   "main": "./dist/mac-input.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -33,13 +33,17 @@
     "@rollup/plugin-eslint": "^8.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-replace": "^4.0.0",
+    "@testing-library/jest-dom": "^5.16.4",
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "autoprefixer": "^10.4.7",
+    "babel-jest": "^28.1.2",
     "eslint": "^8.14.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-promise": "^6.0.0",
+    "jest": "^28.1.2",
+    "jest-dom": "^4.0.0",
     "postcss": "^8.4.13",
     "postcss-import-url": "^7.0.0",
     "postcss-nested": "^5.0.6",
@@ -49,6 +53,7 @@
     "sass": "^1.51.0"
   },
   "dependencies": {
-    "@webcomponents/custom-elements": "^1.5.0"
+    "@webcomponents/custom-elements": "^1.5.0",
+    "jest-environment-jsdom": "^28.1.2"
   }
 }
