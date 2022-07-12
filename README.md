@@ -35,7 +35,7 @@ Star rating input web component.
 The demo page: https://yishiashia.github.io/star-input.html
 ## Usage
 
-If you want to customize this web component, you can import the library and 
+If you want to customize this web component, you can import the library and
 implement your new class by extend `StarInput`.
 
 ```js
@@ -45,6 +45,16 @@ class customizedStarInput extends StarInput {
     // override here
 }
 
+```
+
+## Customized star style
+To customize the star style, you can modify the scss variables in `stars.scss`.
+
+```scss
+$empty-star-img: 'https://...';    /* The url path or base64 encode image data string */
+$full-star-img: 'data:image/...';  /* The url path or base64 encode image data string */
+$star-color:  #FFD700;             /* the display color of star icons */
+$hover-color: #FFEA00;             /* the star color when hover on it */
 ```
 
 ### Options

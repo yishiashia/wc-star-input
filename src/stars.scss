@@ -1,13 +1,19 @@
+// Config the following variables to make your own customized star style
+$empty-star-img: 'data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M24 25.15ZM11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6ZM17.15 35.85 24 30.65 30.85 35.85 28.1 27.2 34.4 23.1H26.85L24 14.45L21.15 23.1H13.6L19.9 27.2Z"/></svg>';
+$full-star-img: 'data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"/></svg>';
+$star-color: #FFD700;
+$hover-color: #FFEA00;
+
 @mixin emptyStar {
-    -webkit-mask: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M24 25.15ZM11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6ZM17.15 35.85 24 30.65 30.85 35.85 28.1 27.2 34.4 23.1H26.85L24 14.45L21.15 23.1H13.6L19.9 27.2Z"/></svg>') no-repeat 0 0;
-    mask: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M24 25.15ZM11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6ZM17.15 35.85 24 30.65 30.85 35.85 28.1 27.2 34.4 23.1H26.85L24 14.45L21.15 23.1H13.6L19.9 27.2Z"/></svg>') no-repeat 0 0;
+    -webkit-mask: url($empty-star-img) no-repeat 0 0;
+    mask: url($empty-star-img) no-repeat 0 0;
     -webkit-mask-size: cover;
     mask-size: cover;
 }
 
 @mixin fullStar {
-    -webkit-mask: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"/></svg>') no-repeat 0 0 !important;
-    mask: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"/></svg>') no-repeat 0 0 !important;
+    -webkit-mask: url($full-star-img) no-repeat 0 0 !important;
+    mask: url($full-star-img) no-repeat 0 0 !important;
     -webkit-mask-size: cover !important;
     mask-size: cover !important;
 }
@@ -49,31 +55,31 @@
     input:checked {
         & ~ label::before {
             @include fullStar;
-            background-color: #FFD700 !important;
+            background-color: $star-color !important;
         }
         & + label:hover, & ~ label:hover, & ~ label:hover ~ label {
             &::before {
-                -webkit-mask: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"/></svg>') no-repeat 0 0;
-                mask: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"/></svg>') no-repeat 0 0;
+                -webkit-mask: url($full-star-img) no-repeat 0 0;
+                mask: url($full-star-img) no-repeat 0 0;
                 -webkit-mask-size: cover;
                 mask-size: cover;
-                background-color: #FFEA00 !important;
+                background-color: $hover-color !important;
             }
         }
     }
     label:hover {
         & ~ label::before {
             @include fullStar;
-            background-color: #FFD700 !important;
+            background-color: $star-color !important;
         }
         &::before {
             @include fullStar;
-            background-color: #FFD700 !important;
+            background-color: $star-color !important;
         }
         & ~ input:checked {
             & ~ label::before {
                 @include fullStar;
-                background-color: #FFEA00 !important;
+                background-color: $hover-color !important;
             }
         }
     }
