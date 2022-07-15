@@ -1,8 +1,8 @@
 {
   "name": "wc-star-input",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Star rating input WebComponent ",
-  "main": "./dist/mac-input.js",
+  "main": "./dist/star-input.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -24,6 +24,9 @@
     "url": "https://github.com/yishiashia/wc-star-input/issues"
   },
   "homepage": "https://github.com/yishiashia/wc-star-input#readme",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/eslint-parser": "^7.17.0",
