@@ -1,7 +1,9 @@
 import eslint from '@rollup/plugin-eslint'
+import commonjs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { babel } from '@rollup/plugin-babel'
 import replace from '@rollup/plugin-replace'
+import typescript from '@rollup/plugin-typescript'
 import scss from 'rollup-plugin-scss'
 import postcss from 'postcss'
 import { terser } from "rollup-plugin-terser"
@@ -11,8 +13,9 @@ import postcssNested from 'postcss-nested'
 import postcssImportUrl from 'postcss-import-url'
 
 const plugins = [
+  typescript(),
   eslint({
-    fix: true,
+    fix: false,
     throwOnError: true,
     throwOnWarning: true,
     include: ['src/**'],
@@ -33,10 +36,13 @@ const plugins = [
     DEVELOPMENT: process.env.NODE_ENV
   }),
   nodeResolve({
-    preferBuiltins: false
+    preferBuiltins: false,
+    extensions: ['.ts', '.js']
   }),
+  commonjs(),
   babel({
     babelHelpers: 'runtime',
+    extensions: ['.ts', '.js'],
     exclude: [
       /\/core-js\//
     ]
@@ -46,7 +52,7 @@ const plugins = [
 
 export default [
   {
-    input: 'index.js',
+    input: 'src/index.ts',
     output: {
       file: 'dist/star-input.js',
       format: 'umd',
