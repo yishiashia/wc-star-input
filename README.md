@@ -2,6 +2,7 @@
 [![NPM](https://nodei.co/npm/wc-star-input.png?mini=true)](https://www.npmjs.com/package/wc-star-input)
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/wc-star-input)
+[![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/yishiashia/dee60aefdce58a7559baeb7c5deb3a8b/raw/ac85cc4d0af40c03a2156ee3a6736d44ebb0ca58/your-repo-name__heads_master.json)]
 
 
 Star rating input web component.
