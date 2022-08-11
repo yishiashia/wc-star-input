@@ -1,10 +1,11 @@
 # wc-star-input
 
-[![published][published-image]][published-url]
+[![published][wc-image]][wc-url]
 [![coverage][coverage-image]][coverage-url]
-[![javascript][js-image]][js-url]
-[![typescript][ts-image]][ts-url]
-[![license][license-image]][license-url]
+[![npm](https://img.shields.io/npm/v/wc-star-input.svg?style=flat-square)](https://www.npmjs.com/package/wc-star-input)
+[![npm](https://img.shields.io/npm/dm/wc-star-input.svg?style=flat-square)](https://www.npmjs.com/package/wc-star-input)
+[![GitHub issues](https://img.shields.io/github/issues/yishiashia/wc-star-input.svg?style=flat-square)](https://github.com/yishiashia/wc-star-input/issues)
+![license](https://img.shields.io/npm/l/wc-star-input.svg?style=flat-square)
 
 Star rating input web component.
 
@@ -92,6 +93,3 @@ Allow rating with half star when setting to `true`.
 
 [ts-image]: https://img.shields.io/badge/TypeScript-^4.7.4-blue?style=flat-square
 [ts-url]: https://www.typescriptlang.org/
-
-[license-image]: https://img.shields.io/badge/license-MIT-green.svg?maxAge=2592000&style=flat-square
-[license-url]: https://opensource.org/licenses/MIT
