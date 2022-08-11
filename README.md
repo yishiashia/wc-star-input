@@ -1,12 +1,10 @@
 # wc-star-input
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/wc-star-input)
-![Coverage Badge](https://img.shields.io/endpoint?style=flat-square&url=https://gist.githubusercontent.com/yishiashia/dee60aefdce58a7559baeb7c5deb3a8b/raw/ac85cc4d0af40c03a2156ee3a6736d44ebb0ca58/your-repo-name__heads_master.json)
+[![Coverage Badge](https://img.shields.io/endpoint?style=flat-square&url=https://gist.githubusercontent.com/yishiashia/dee60aefdce58a7559baeb7c5deb3a8b/raw/7c17b27a85415002bdb2344fc73961917402d3a9/wc-star-input__heads_master.json)](https://gist.githubusercontent.com/yishiashia/dee60aefdce58a7559baeb7c5deb3a8b/raw/7c17b27a85415002bdb2344fc73961917402d3a9/wc-star-input__heads_master.json)
 [![Javascript](https://img.shields.io/badge/ES-6%2B-ff69b4.svg?style=flat-square)](https://www.ecma-international.org/ecma-262/6.0/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-^4.7.4-blue?style=flat-square)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?maxAge=2592000&style=flat-square)](https://opensource.org/licenses/MIT)
-
-[![NPM](https://nodei.co/npm/wc-star-input.png?mini=true)](https://www.npmjs.com/package/wc-star-input)
 
 Star rating input web component.
 
