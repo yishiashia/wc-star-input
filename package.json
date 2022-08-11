@@ -1,6 +1,6 @@
 {
   "name": "wc-star-input",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Star rating input WebComponent ",
   "main": "./dist/star-input.js",
   "types": "./types/index.d.ts",
@@ -16,6 +16,8 @@
   },
   "keywords": [
     "star",
+    "rate",
+    "lightweight",
     "rating",
     "input",
     "webcomponent"

@@ -5,9 +5,6 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-^4.7.4-blue?style=flat-square)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?maxAge=2592000&style=flat-square)](https://opensource.org/licenses/MIT)
 
-[![NPM](https://nodei.co/npm/wc-star-input.png?mini=true)](https://www.npmjs.com/package/wc-star-input)
-
-
 
 Star rating input web component.
 
