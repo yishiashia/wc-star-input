@@ -7,6 +7,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/yishiashia/wc-star-input.svg?style=flat-square)](https://github.com/yishiashia/wc-star-input/issues)
 ![license](https://img.shields.io/npm/l/wc-star-input.svg?style=flat-square)
 
+[![NPM](https://nodei.co/npm/wc-star-input.png?mini=true)](https://www.npmjs.com/package/wc-star-input)
+
 Star rating input web component.
 
 
