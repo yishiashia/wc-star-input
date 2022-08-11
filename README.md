@@ -1,10 +1,10 @@
 # wc-star-input
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/wc-star-input)
-[![Coverage Badge](https://img.shields.io/endpoint?style=flat-square&url=https://gist.githubusercontent.com/yishiashia/dee60aefdce58a7559baeb7c5deb3a8b/raw/7c17b27a85415002bdb2344fc73961917402d3a9/wc-star-input__heads_master.json)](https://gist.githubusercontent.com/yishiashia/dee60aefdce58a7559baeb7c5deb3a8b/raw/7c17b27a85415002bdb2344fc73961917402d3a9/wc-star-input__heads_master.json)
-[![Javascript](https://img.shields.io/badge/ES-6%2B-ff69b4.svg?style=flat-square)](https://www.ecma-international.org/ecma-262/6.0/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-^4.7.4-blue?style=flat-square)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg?maxAge=2592000&style=flat-square)](https://opensource.org/licenses/MIT)
+[![published][published-image]][published-url]
+[![coverage][coverage-image]][coverage-url]
+[![javascript][js-image]][js-url]
+[![typescript][ts-image]][ts-url]
+[![license][license-image]][license-url]
 
 Star rating input web component.
 
@@ -80,3 +80,18 @@ The width of star icon (unit: pixel).
 #### data-halfstar (optional)
 
 Allow rating with half star when setting to `true`.
+
+[wc-image]: https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square
+[wc-url]: https://www.webcomponents.org/element/wc-star-input
+
+[coverage-image]: https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fgist.githubusercontent.com%2Fyishiashia%2Fdee60aefdce58a7559baeb7c5deb3a8b%2Fraw%2F7c17b27a85415002bdb2344fc73961917402d3a9%2Fwc-star-input__heads_master.json
+[coverage-url]: https://gist.githubusercontent.com/yishiashia/dee60aefdce58a7559baeb7c5deb3a8b/raw/7c17b27a85415002bdb2344fc73961917402d3a9/wc-star-input__heads_master.json
+
+[js-image]: https://img.shields.io/badge/ES-6%2B-ff69b4.svg?style=flat-square
+[js-url]: https://www.ecma-international.org/ecma-262/6.0/
+
+[ts-image]: https://img.shields.io/badge/TypeScript-^4.7.4-blue?style=flat-square
+[ts-url]: https://www.typescriptlang.org/
+
+[license-image]: https://img.shields.io/badge/license-MIT-green.svg?maxAge=2592000&style=flat-square
+[license-url]: https://opensource.org/licenses/MIT
