@@ -5,82 +5,94 @@ $star-color: #FFD700;
 $hover-color: #FFEA00;
 
 @mixin emptyStar {
-    -webkit-mask: url($empty-star-img) no-repeat 0 0;
-    mask: url($empty-star-img) no-repeat 0 0;
-    -webkit-mask-size: cover;
-    mask-size: cover;
+  -webkit-mask: url($empty-star-img) no-repeat 0 0;
+  mask: url($empty-star-img) no-repeat 0 0;
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
 
 @mixin fullStar {
-    -webkit-mask: url($full-star-img) no-repeat 0 0 !important;
-    mask: url($full-star-img) no-repeat 0 0 !important;
-    -webkit-mask-size: cover !important;
-    mask-size: cover !important;
+  -webkit-mask: url($full-star-img) no-repeat 0 0 !important;
+  mask: url($full-star-img) no-repeat 0 0 !important;
+  -webkit-mask-size: cover !important;
+  mask-size: cover !important;
 }
 
 .rate {
-    display: inline-block;
-    &>input {
-        display: none;
+  display: inline-block;
+
+  &>input {
+    display: none;
+  }
+
+  &>label {
+    float: right;
+
+    &::before {
+      @include emptyStar;
+      display: inline-block;
+      margin: 0;
+      cursor: pointer;
+      content: '';
+      height: var(--star-height);
+      width: var(--star-width);
+      background-color: gray;
     }
-    &>label {
-        float: right;
-        &::before {
-            @include emptyStar;
-            display: inline-block;
-            margin: 0;
-            cursor: pointer;
-            content: '';
-            height: var(--star-height);
-            width: var(--star-width);
-            background-color: gray;
-        }
-        &.half {
-            &::before {
-                height: 0;
-                width: 0;
-            }
-            &.allow-half::before {
-                @include emptyStar;
-                content: '';
-                position: absolute;
-                padding-right: 0;
-                height: var(--star-height);
-                width: calc( var(--star-width) / 2 );
-                overflow: hidden;
-                background-color: gray;
-            }
-        }
+
+    &.half {
+      &::before {
+        height: 0;
+        width: 0;
+      }
+
+      &.allow-half::before {
+        @include emptyStar;
+        content: '';
+        position: absolute;
+        padding-right: 0;
+        height: var(--star-height);
+        width: calc(var(--star-width) / 2);
+        overflow: hidden;
+        background-color: gray;
+      }
     }
-    input:checked {
-        & ~ label::before {
-            @include fullStar;
-            background-color: $star-color !important;
-        }
-        & + label:hover, & ~ label:hover, & ~ label:hover ~ label {
-            &::before {
-                -webkit-mask: url($full-star-img) no-repeat 0 0;
-                mask: url($full-star-img) no-repeat 0 0;
-                -webkit-mask-size: cover;
-                mask-size: cover;
-                background-color: $hover-color !important;
-            }
-        }
+  }
+
+  input:checked {
+    &~label::before {
+      @include fullStar;
+      background-color: $star-color !important;
     }
-    label:hover {
-        & ~ label::before {
-            @include fullStar;
-            background-color: $star-color !important;
-        }
-        &::before {
-            @include fullStar;
-            background-color: $star-color !important;
-        }
-        & ~ input:checked {
-            & ~ label::before {
-                @include fullStar;
-                background-color: $hover-color !important;
-            }
-        }
+
+    &+label:hover,
+    &~label:hover,
+    &~label:hover~label {
+      &::before {
+        -webkit-mask: url($full-star-img) no-repeat 0 0;
+        mask: url($full-star-img) no-repeat 0 0;
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        background-color: $hover-color !important;
+      }
     }
+  }
+
+  label:hover {
+    &~label::before {
+      @include fullStar;
+      background-color: $star-color !important;
+    }
+
+    &::before {
+      @include fullStar;
+      background-color: $star-color !important;
+    }
+
+    &~input:checked {
+      &~label::before {
+        @include fullStar;
+        background-color: $hover-color !important;
+      }
+    }
+  }
 }

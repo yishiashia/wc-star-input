@@ -1,108 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>WebComponent Demo | starc-input</title>
-<!-- Latest compiled and minified CSS -->
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-crossorigin="anonymous"
-/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebComponent Demo | starc-input</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
 
-<!-- Optional theme -->
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
-integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-crossorigin="anonymous"
-/>
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
 
-<script>
-function form_submit(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const formProps = Object.fromEntries(formData);
-    document.getElementById("form-vals").textContent = JSON.stringify(formProps, null, 2);
-    return false;
-}
-</script>
-<style>
-.container {
-    padding-top: 30px;
-    padding-left: 10%;
-    padding-right: 10%;
-display: flex;
-         flex-direction: column;
-         text-align: center;
-}
-.page-header {
-    margin-top: 0px;
-}
-</style>
-</head>
-<body>
-<script src="./star-input.js"></script>
-<div class="container">
-<div class="page-header">
-<h1 style="display: inline-block;">wc-star-input</h1>
-<p style="font-size: 16pt;">Star rating input implemented with WebComponent.</p>
-</div>
-<div class="page-header">
-<h2>Form</h2>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
-<form action="#" method="POST" onsubmit="return form_submit(event)">
-<div class="form-group">
-<label for="star-input">Rate here:</label><br/>
-<star-input
-id="star-input"
-name="stars"data-halfstar="true"
-height="50"
-width="50"
->
-</star-input>
-</div>
-<input class="btn btn-primary" type="submit" value="submit" />
-</form>
-</div>
-</div>
-<div class="page-header">
-<h2>Output</h2>
-</div>
-<div class="panel panel-default">
-<div class="panel-body">
-<code id="form-vals" alt="Form post parameters">
+    <!-- Load star input component with CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/wc-star-input/dist/star-input.min.js"></script>
 
-</code>
-</div>
-</div>
-<footer style="margin-top: 40px;">
-<div style="margin-bottom: 20px;">
-<a href="https://www.npmjs.com/package/wc-star-input"><img src="img/npm.svg" style="height: 20px; margin-right: 5px;" /></a>
-<a href="https://www.webcomponents.org/element/wc-star-input"><img src="img/wc.svg" style="height: 20px; margin-right: 5px;" /></a>
-<a href="https://github.com/yishiashia/wc-star-input"><img src="img/github.png" style="height: 20px; margin-right: 5px;" /></a>
-</div>
-<p>
-<a
-href="https://github.com/yishiashia"
-class="text-decoration-none"
-target="_blank"
-rel="noreferrer noopener"
-style="display: inline-flex; align-items: center;"
->
-
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-</svg>&nbsp;
-<span>yishiashia</span>
-</a>
-</p>
-</footer>
-</div>
-</body>
+    <script>
+      function form_submit(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const formProps = Object.fromEntries(formData);
+        document.getElementById("form-vals").textContent = JSON.stringify(
+          formProps,
+          null,
+          2
+        );
+        return false;
+      }
+    </script>
+    <style>
+      .container {
+        padding-top: 30px;
+        padding-left: 10%;
+        padding-right: 10%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+      .page-header {
+        margin-top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="../dist/star-input.js"></script>
+    <div class="container">
+      <div class="page-header">
+        <h1 style="display: inline-block">wc-star-input</h1>
+        <p style="font-size: 16pt">
+          Star rating input implemented with WebComponent.
+        </p>
+      </div>
+      <div class="page-header">
+        <h2>Form</h2>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form action="#" method="POST" onsubmit="return form_submit(event)">
+            <div class="form-group">
+              <label for="star-input">Rate here:</label><br />
+              <star-input
+                id="star-input"
+                name="stars"
+                data-halfstar="true"
+                height="50"
+                width="50"
+              >
+              </star-input>
+            </div>
+            <input class="btn btn-primary" type="submit" value="submit" />
+          </form>
+        </div>
+      </div>
+      <div class="page-header">
+        <h2>Output</h2>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <code id="form-vals" alt="Form post parameters"> </code>
+        </div>
+      </div>
+      <footer style="margin-top: 40px">
+        <div style="margin-bottom: 20px">
+          <a href="https://www.npmjs.com/package/wc-star-input"
+            ><img src="img/npm.svg" style="height: 20px; margin-right: 5px"
+          /></a>
+          <a href="https://www.webcomponents.org/element/wc-star-input"
+            ><img src="img/wc.svg" style="height: 20px; margin-right: 5px"
+          /></a>
+          <a href="https://github.com/yishiashia/wc-star-input"
+            ><img src="img/github.png" style="height: 20px; margin-right: 5px"
+          /></a>
+        </div>
+        <p>
+          <a
+            href="https://github.com/yishiashia"
+            class="text-decoration-none"
+            target="_blank"
+            rel="noreferrer noopener"
+            style="display: inline-flex; align-items: center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-github"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              ></path></svg
+            >&nbsp;
+            <span>yishiashia</span>
+          </a>
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>

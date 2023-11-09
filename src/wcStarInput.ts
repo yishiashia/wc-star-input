@@ -1,87 +1,105 @@
-import starStyle from './stars.scss'
+import starStyle from "./stars.scss";
 
-function getPixel (val: string) {
-  const pixelVal = parseInt(val)
+function getPixel(val: string) {
+  const pixelVal = parseInt(val);
   if (!isNaN(pixelVal) && pixelVal > 0) {
-    return pixelVal
+    return pixelVal;
   } else {
-    return 50
+    return 50;
   }
 }
 
 export default class StarInput extends HTMLElement {
-    realInput: HTMLInputElement | null;
-    value_: string;
-    allowHalf: boolean;
-    constructor () {
-      super()
-      // Shadow dom
-      this.attachShadow({ mode: 'open' })
+  realInput: HTMLInputElement | null;
+  value_: string;
+  allowHalf: boolean;
+  constructor() {
+    super();
+    // Shadow dom
+    this.attachShadow({ mode: "open" });
+    if (this.shadowRoot !== null) {
+      this.shadowRoot.innerHTML = this.template();
+    }
+    this.realInput = null;
+    this.value_ = "0";
+    this.allowHalf = false;
+  }
+
+  connectedCallback() {
+    const _self = this;
+    if (_self !== null && _self.shadowRoot !== null) {
+      // _self.getAttribute('data-halfstar') === 'true'
+      _self.allowHalf = _self.getAttribute("data-halfstar") === "true";
+      const halfLabels = _self.shadowRoot.querySelectorAll(".half");
+      halfLabels.forEach((element) => {
+        if (_self.allowHalf) {
+          element.classList.add("allow-half");
+        } else {
+          element.classList.remove("allow-half");
+        }
+      });
+      this.realInput = document.createElement("input");
+      this.realInput.type = "hidden";
+      this.realInput.name = String(_self.getAttribute("name"));
+      this.realInput.value = this.value_;
+      this.appendChild(this.realInput);
+      // Style
+      const styleElement = document.createElement("style");
+      const givenWidth = String(_self.getAttribute("width"));
+      const givenHeight = String(_self.getAttribute("height"));
+      styleElement.appendChild(
+        document.createTextNode(
+          `:host{--star-width: ${getPixel(
+            givenWidth,
+          )}px;--star-height: ${getPixel(givenHeight)}px;}`,
+        ),
+      );
+      _self.shadowRoot.appendChild(styleElement);
+
       if (this.shadowRoot !== null) {
-        this.shadowRoot.innerHTML = this.template()
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync(starStyle);
+        this.shadowRoot.adoptedStyleSheets = [sheet];
       }
-      this.realInput = null
-      this.value_ = '0'
-      this.allowHalf = false
-    }
 
-    connectedCallback () {
-      const _self = this
-      if (_self !== null && _self.shadowRoot !== null) {
-        // _self.getAttribute('data-halfstar') === 'true'
-        _self.allowHalf = _self.getAttribute('data-halfstar') === 'true'
-        const halfLabels = _self.shadowRoot.querySelectorAll('.half')
-        halfLabels.forEach(element => {
-          if (_self.allowHalf) {
-            element.classList.add('allow-half')
-          } else {
-            element.classList.remove('allow-half')
-          }
-        })
-        this.realInput = document.createElement('input')
-        this.realInput.type = 'hidden'
-        this.realInput.name = String(_self.getAttribute('name'))
-        this.realInput.value = this.value_
-        this.appendChild(this.realInput)
-        // Style
-        const styleElement = document.createElement('style')
-        const givenWidth = String(_self.getAttribute('width'))
-        const givenHeight = String(_self.getAttribute('height'))
-        styleElement.appendChild(document.createTextNode(`:host{--star-width: ${getPixel(givenWidth)}px;--star-height: ${getPixel(givenHeight)}px;}`))
-        styleElement.appendChild(document.createTextNode(starStyle))
-        _self.shadowRoot.appendChild(styleElement)
-        this.valueChange = this.valueChange.bind(this)
-        const radios = _self.shadowRoot.querySelectorAll('input[type=radio][name="starRate"]')
-        radios.forEach(element => {
-          element.addEventListener('change', _self.valueChange)
-        })
-      }
+      this.valueChange = this.valueChange.bind(this);
+      const radios = _self.shadowRoot.querySelectorAll(
+        'input[type=radio][name="starRate"]',
+      );
+      radios.forEach((element) => {
+        element.addEventListener("change", _self.valueChange);
+      });
     }
+  }
 
-    disconnectedCallback () {
-      const _self = this
-      if (_self !== null && _self.shadowRoot !== null) {
-        const radios = _self.shadowRoot.querySelectorAll('input[type=radio][name="starRate"]')
-        radios.forEach(element => {
-          element.removeEventListener('change', _self.valueChange)
-        })
-      }
+  disconnectedCallback() {
+    const _self = this;
+    if (_self !== null && _self.shadowRoot !== null) {
+      const radios = _self.shadowRoot.querySelectorAll(
+        'input[type=radio][name="starRate"]',
+      );
+      radios.forEach((element) => {
+        element.removeEventListener("change", _self.valueChange);
+      });
     }
+  }
 
-    valueChange () {
-      if (this !== null && this.shadowRoot !== null) {
-        const inputElement = this.shadowRoot.querySelector('input[type=radio][name="starRate"]:checked') as HTMLInputElement
-        if (inputElement !== null) {
-          this.value_ = inputElement.value
-          if (this.realInput) {
-            this.realInput.value = this.value_
-          }
+  valueChange() {
+    if (this !== null && this.shadowRoot !== null) {
+      const inputElement = this.shadowRoot.querySelector(
+        'input[type=radio][name="starRate"]:checked',
+      ) as HTMLInputElement;
+      if (inputElement !== null) {
+        this.value_ = inputElement.value;
+        if (this.realInput) {
+          this.realInput.value = this.value_;
         }
       }
     }
+  }
 
-    template () {
-      return `
+  template() {
+    return `
       <div class="rate">
         <input type="radio" name="starRate" id="rating10" name="rating" value="5" />
         <label for="rating10" title="5 stars"></label>
@@ -104,11 +122,6 @@ export default class StarInput extends HTMLElement {
         <input type="radio" name="starRate" id="rating1" name="rating" value="0.5" />
         <label class="half" for="rating1" title="0.5 star"></label>
       </div>
-    `
-    }
+    `;
+  }
 }
-// # sourceMappingURL=wcStarInput.js.map
-// # sourceMappingURL=wcStarInput.js.map
-// # sourceMappingURL=wcStarInput.js.map
-// # sourceMappingURL=wcStarInput.js.map
-// # sourceMappingURL=wcStarInput.js.map

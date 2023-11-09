@@ -12,16 +12,58 @@
 Star rating input web component.
 
 
-## Install
+## Installation
+You can install `wc-star-input` with npm, or just get started quickly with CDN.
 
-    $ npm install wc-star-input
+### Install from npm
+To install from npm, open terminal in your project folder and run:
 
-## Syntax
+```shell
+npm install wc-star-input
+```
+
+After the package is installed, then you can import the bubble web component into you code:
+
+```js
+import 'wc-star-input';
+
+window.onload = function() {
+  let starInput = document.createElement('star-input');
+  starInput.setAttribute("name", "product_rate");
+  starInput.setAttribute("height", "30");
+  starInput.setAttribute("width", "30");
+  starInput.setAttribute("data-halfstar", "true");
+  document.body.appendChild(starInput);
+}
+```
+
+### Install from CDN
+There is `jsDelivr` CDN available for quickly integrated with your web page.
 
 ```html
-<script src="star-input.js"></script>
+<!-- Latest version -->
+<script src="https://cdn.jsdelivr.net/npm/wc-star-input"></script>
 
-<form action="#" method="POST">
+<!-- Specific version -->
+<script src="https://cdn.jsdelivr.net/npm/wc-star-input@1.2.0"></script>
+```
+
+#### Basic Usages:
+
+```html
+<html>
+  <head>
+
+    <!-- Load Bubble WebComponent library -->
+    <script src="https://cdn.jsdelivr.net/npm/wc-star-input@1.2.0"></script>
+    <!-- End Load -->
+
+  </head>
+
+  <body>
+
+    <!-- Using "star-input" html tag to generate Bubble -->
+    <form action="#" method="POST">
     <label for="star-input">Rate here:</label>
     <star-input
         id="star-input"
@@ -33,6 +75,9 @@ Star rating input web component.
     </star-input>
     <input type="submit" value="submit" />
 </form>
+
+  </body>
+</html>
 ```
 
 ## Demo page

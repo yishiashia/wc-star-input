@@ -23,6 +23,7 @@ module.exports = {
       },
       extends: [
         'eslint:recommended',
+        'plugin:prettier/recommended'
         // 'plugin:@typescript-eslint/eslint-recommended',
         // 'plugin:@typescript-eslint/recommended'
       ],
@@ -35,10 +36,11 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.json'
       },
-      plugins: ['@typescript-eslint'],
+      plugins: ['@typescript-eslint', 'prettier'],
       rules: {
         "no-unused-vars": "off",
-        "require-yield": "off"
+        "require-yield": "off",
+        "prettier/prettier": "error"
       }
     }
   ]
