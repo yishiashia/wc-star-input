@@ -21,9 +21,6 @@
       crossorigin="anonymous"
     />
 
-    <!-- Load star input component with CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/wc-star-input@1.2.0/dist/star-input.min.js"></script>
-
     <script>
       function form_submit(e) {
         e.preventDefault();
@@ -37,30 +34,30 @@
         return false;
       }
     </script>
-    <style>
-      .container {
-        padding-top: 30px;
-        padding-left: 10%;
-        padding-right: 10%;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-      }
-      .page-header {
-        margin-top: 0px;
-      }
-    </style>
   </head>
   <body>
+    <!-- Load star input component with CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/wc-star-input@1.2.0/dist/star-input.min.js"></script>
+
     <div class="container">
-      <div class="page-header">
-        <h1 style="display: inline-block">wc-star-input</h1>
-        <p style="font-size: 16pt">
-          Star rating input implemented with WebComponent.
-        </p>
+      <h1 style="display: inline-block">WebComponent Demo | star-input</h1>
+      <a style="float: right" href="https://yishiashia.github.io/demo"
+        >back to index</a
+      >
+      <hr />
+      <div>
+        <a href="https://www.npmjs.com/package/wc-star-input"
+          ><img src="/img/npm.svg" style="height: 20px; margin-right: 5px"
+        /></a>
+        <a href="https://www.webcomponents.org/element/wc-star-input"
+          ><img src="/img/wc.svg" style="height: 20px; margin-right: 5px"
+        /></a>
+        <a href="https://github.com/yishiashia/wc-star-input"
+          ><img src="/img/github.png" style="height: 20px; margin-right: 5px"
+        /></a>
       </div>
       <div class="page-header">
-        <h2>Form</h2>
+        <h2>Demo form</h2>
       </div>
       <div class="panel panel-default">
         <div class="panel-body">
@@ -81,25 +78,14 @@
         </div>
       </div>
       <div class="page-header">
-        <h2>Output</h2>
+        <h2>Form post parameters:</h2>
       </div>
       <div class="panel panel-default">
         <div class="panel-body">
           <code id="form-vals" alt="Form post parameters"> </code>
         </div>
       </div>
-      <footer style="margin-top: 40px">
-        <div style="margin-bottom: 20px">
-          <a href="https://www.npmjs.com/package/wc-star-input"
-            ><img src="img/npm.svg" style="height: 20px; margin-right: 5px"
-          /></a>
-          <a href="https://www.webcomponents.org/element/wc-star-input"
-            ><img src="img/wc.svg" style="height: 20px; margin-right: 5px"
-          /></a>
-          <a href="https://github.com/yishiashia/wc-star-input"
-            ><img src="img/github.png" style="height: 20px; margin-right: 5px"
-          /></a>
-        </div>
+      <footer style="width: 100vw; margin-top: 50px">
         <p>
           <a
             href="https://github.com/yishiashia"
@@ -118,8 +104,9 @@
             >
               <path
                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-              ></path></svg
-            >&nbsp;
+              ></path>
+            </svg>
+            &nbsp;
             <span>yishiashia</span>
           </a>
         </p>
