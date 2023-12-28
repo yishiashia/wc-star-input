@@ -81,7 +81,7 @@ There is `jsDelivr` CDN available for quickly integrated with your web page.
 ```
 
 ## Demo page
-The demo page: [https://yishiashia.github.io/star-input.html](https://yishiashia.github.io/wc-star-input/)
+The demo page: https://yishiashia.github.io/wc-star-input/
 ## Usage
 
 If you want to customize this web component, you can import the library and
